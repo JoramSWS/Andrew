@@ -94,7 +94,7 @@ PAGES = {
 
 def main():
     st.sidebar.title("Walkie Channels:")
-    choice = st.sidebar.selectbox("select chatbot", list(PAGES.keys()))
+    choice = st.sidebar.selectbox("Who do you need?", list(PAGES.keys()))
     #call the page function
     PAGES[choice]()
 
