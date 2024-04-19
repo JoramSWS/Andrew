@@ -17,11 +17,11 @@ personality_prompt = {
 }[name]
 
 if prompt := st.text_input("What is up?"):
-    with st.beta_container():
+    with st.container():
         st.markdown("User:")
         st.write(prompt)
 
-    with st.beta_container():
+    with st.container():
         st.markdown("Assistant:")
         messages = [{"role": "user", "content": prompt}, {"role": "assistant", "content": personality_prompt}]
         response = client.chat.completions.create(
