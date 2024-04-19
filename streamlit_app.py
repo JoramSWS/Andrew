@@ -53,6 +53,7 @@ if prompt := st.text_input("Go for Andrew..."):
 PAGES = {
     "Chris": page_1,
     "Andrew": page 2
+}
 
 def main():
     st.sidebar.title("navigation")
