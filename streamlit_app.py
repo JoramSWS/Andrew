@@ -16,7 +16,7 @@ def page_1():
 
     
     # Streamlit App
-    htp="https://raw.githubusercontent.com/JoramSWS/pw-tests/main/S1_CrewHero_Wordmark-2x.png"
+    htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/TVBOY_logo.png"
     st.image(htp, width=350)
     st.title("TVBOY AI")
     st.header("Andrew")
@@ -56,7 +56,7 @@ def page_2():
 
     
     # Streamlit App
-    htp="https://raw.githubusercontent.com/JoramSWS/pw-tests/main/S1_CrewHero_Wordmark-2x.png"
+    htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/TVBOY_logo.png"
     st.image(htp, width=350)
     st.title("TVBOY AI")
     st.header("Chris")
