@@ -48,18 +48,25 @@ def page_1():
     st.write(formatted_response)
 
 def page_2():
-  # Streamlit App
+  PROMPT_TEMPLATE = """
+    
+    Answer the question using portmanteaus or clever wordplay: {question}
+
+    """
+
+    
+    # Streamlit App
     htp="https://raw.githubusercontent.com/JoramSWS/pw-tests/main/S1_CrewHero_Wordmark-2x.png"
     st.image(htp, width=350)
     st.title("TVBOY AI")
-    st.header("Andrew")
-    query_text = st.text_input("Go for Andrew!")
+    st.header("Chris")
+    query_text = st.text_input("Stop saying Hey Chris")
     if not query_text:
         st.warning("Please enter your request.")
         return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
-    prompt = prompt_template.format(context="I am an angry man", question=query_text)
+    prompt = prompt_template.format(question=query_text)
     print(prompt)
 
     model = ChatOpenAI(
@@ -79,7 +86,6 @@ def page_2():
     formatted_response = response_text[start_index:end_index].replace("\\n\\n", "\n").strip()
 
     st.write(formatted_response)
-
 PAGES = {
     "Chris": page_1,
     "Andrew": page_2
