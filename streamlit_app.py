@@ -36,5 +36,5 @@ if prompt := st.chat_input("What is up?"):
             model=st.session_state["openai_model"],
             messages=messages,
         )
-        st.write(response.choices[0].text.strip())
+        st.write(response["choices"][0]["text"].strip())
     st.session_state.messages.append({"role": "assistant", "content": response})
