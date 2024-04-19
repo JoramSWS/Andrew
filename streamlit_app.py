@@ -10,25 +10,20 @@ if "openai_model" not in st.session_state:
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
-
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
         
     tone = st.selectbox(
         "Select the tone of the response:",
         ["Chris", "Andrew"],
         )
-
-    prompt_template = {
-    "Chris": "Gruff tone with a fondness for wordplay and portmanteaus",
-    "Andrew": "From Texas, boisterous, angry tone",
- }[tone]
-
 if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
+    
+    prompt_template = {
+    "Chris": "Gruff tone with a fondness for wordplay and portmanteaus",
+    "Andrew": "From Texas, boisterous, angry tone",
+ }[tone]
     
     with st.chat_message("assistant"):
         stream = client.chat.completions.create(
