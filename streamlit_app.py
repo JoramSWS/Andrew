@@ -10,7 +10,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 def page_1():
     PROMPT_TEMPLATE = """
     
-    Answer the question in an angry, impatient tone: {question}
+    Answer the question in an angry, impatient tone.  Be sarcastic.  Be from Texas: {question}
 
     """
 
