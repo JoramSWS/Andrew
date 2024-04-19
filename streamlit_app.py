@@ -88,12 +88,12 @@ def page_2():
     st.write(formatted_response)
 
 PAGES = {
-    "Chris": page_1,
-    "Andrew": page_2
+    "Channel 1: Andrew": page_1,
+    "Channel 2: Chris": page_2
 }
 
 def main():
-    st.sidebar.title("navigation")
+    st.sidebar.title("Walkie Channels:")
     choice = st.sidebar.selectbox("select chatbot", list(PAGES.keys()))
     #call the page function
     PAGES[choice]()
