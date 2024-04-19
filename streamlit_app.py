@@ -19,9 +19,6 @@ def page_1():
     htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/ANDREW.png"
     st.image(htp)
     query_text = st.text_input("Go for Andrew. I SAID GO")
-    if not query_text:
-        st.warning("Please enter your request.")
-        return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(question=query_text)
@@ -59,9 +56,6 @@ def page_2():
     st.title("TVBOY AI")
     st.header("Chris")
     query_text = st.text_input("Stop saying Hey Chris!")
-    if not query_text:
-        st.warning("Please enter your request.")
-        return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(question=query_text)
