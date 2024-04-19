@@ -86,6 +86,7 @@ def page_2():
     formatted_response = response_text[start_index:end_index].replace("\\n\\n", "\n").strip()
 
     st.write(formatted_response)
+
 PAGES = {
     "Chris": page_1,
     "Andrew": page_2
