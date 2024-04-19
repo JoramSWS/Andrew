@@ -25,10 +25,10 @@ if prompt := st.chat_input("What is up?"):
         ["Chris", "Andrew"],
         )
 
-     prompt_template = {
-        "Chris": "Gruff tone with a fondness for wordplay and portmanteaus",
-        "Andrew": "From Texas, boisterous, angry tone",
-        }[tone]
+    prompt_template = {
+    "Chris": "Gruff tone with a fondness for wordplay and portmanteaus",
+    "Andrew": "From Texas, boisterous, angry tone",
+ }[tone]
     
     with st.chat_message("assistant"):
         stream = client.chat.completions.create(
