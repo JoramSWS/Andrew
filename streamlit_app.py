@@ -50,7 +50,7 @@ def page_1():
 def page_2():
     PROMPT_TEMPLATE = """
     
-    Answer the question using portmanteaus or clever wordplay, but you are also tired and impatient: {question}
+    Answer the question in a clever or sarchastic tone, using portmanteaus or clever wordplay: {question}
 
     """
 
