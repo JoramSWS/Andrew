@@ -94,6 +94,8 @@ PAGES = {
 
 def main():
     st.sidebar.title("Walkie Channels:")
+    htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/TVBOY_logo.png"
+    st.sidebar.image(htp, width=350)
     choice = st.sidebar.selectbox("Who do you need?", list(PAGES.keys()))
     #call the page function
     PAGES[choice]()
