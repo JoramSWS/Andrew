@@ -17,8 +17,8 @@ tone = st.radio(
     )
 
 prompt_template = {
-    "Chris": "Gruff tone with a fondness for wordplay and portmanteaus",
-    "Andrew": "From Texas, boisterous, angry tone",
+    "Chris": "Gruff tone with a fondness for wordplay and portmanteaus,",
+    "Andrew": "From Texas, boisterous, angry tone,",
  }[tone]
 
 if prompt := st.chat_input("What is up?"):
