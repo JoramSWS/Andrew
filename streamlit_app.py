@@ -20,9 +20,7 @@ def page_1():
     st.image(htp, width=350)
     st.title("TVBOY AI")
     st.header("Andrew")
-    query_text = st.text_input("Go for Andrew.")
-    if not query_text:
-        st.warning("I said 'Go for Andrew!!'")
+    query_text = st.text_input("Go for Andrew. I SAID GO")
         return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
@@ -60,9 +58,7 @@ def page_2():
     st.image(htp, width=350)
     st.title("TVBOY AI")
     st.header("Chris")
-    query_text = st.text_input("Stop saying Hey Chris")
-    if not query_text:
-        st.warning("Please enter your request.")
+    query_text = st.text_input("Stop saying Hey Chris!")
         return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
