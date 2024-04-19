@@ -48,7 +48,7 @@ def page_1():
     st.write(formatted_response)
 
 def page_2():
-  PROMPT_TEMPLATE = """
+    PROMPT_TEMPLATE = """
     
     Answer the question using portmanteaus or clever wordplay: {question}
 
