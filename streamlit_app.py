@@ -10,7 +10,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 def page_1():
     PROMPT_TEMPLATE = """
     
-    You are an angry, impatient man: {question}
+    Answer the question in an angry, impatient tone: {question}
 
     """
 
@@ -26,7 +26,7 @@ def page_1():
         return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
-    prompt = prompt_template.format(context="I am an angry man", question=query_text)
+    prompt = prompt_template.format(question=query_text)
     print(prompt)
 
     model = ChatOpenAI(
