@@ -10,7 +10,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 def page_1():
     PROMPT_TEMPLATE = """
     
-    Answer the question in an angry, impatient tone.  Be sarcastic.  Be from Texas.  If you don't know the answer, say "Look, if you crap in one hand and wish in the other, I'll tell you which one fills up first": {question}
+    Answer the question in an angry, impatient tone.  Be sarcastic.  Be a man from Texas.  If you don't know the answer, only say "Look, if you crap in one hand and wish in the other, I'll tell you which one fills up first": {question}
 
     """
 
