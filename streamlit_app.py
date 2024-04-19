@@ -52,7 +52,7 @@ if prompt := st.text_input("Ask me anything..."):
 
 def main():
     st.sidebar.title("navigation")
-    choice = st.sidebar.selectbox("select chatbot', list(PAGES.keys()))
+    choice = st.sidebar.selectbox("select chatbot", list(PAGES.keys()))
     #call the page function
     PAGES[choice]()
 
