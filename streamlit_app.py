@@ -7,6 +7,13 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
 def page_1():
+    PROMPT_TEMPLATE = """
+    
+    You are an angry, impatient man: {question}
+
+    """
+
+    
     # Streamlit App
     htp="https://raw.githubusercontent.com/JoramSWS/pw-tests/main/S1_CrewHero_Wordmark-2x.png"
     st.image(htp, width=350)
