@@ -18,8 +18,6 @@ def page_1():
     # Streamlit App
     htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/ANDREW.png"
     st.image(htp)
-    st.title("TVBOY AI")
-    st.header("Andrew")
     query_text = st.text_input("Go for Andrew. I SAID GO")
     if not query_text:
         st.warning("Please enter your request.")
@@ -93,9 +91,9 @@ PAGES = {
 }
 
 def main():
-    st.sidebar.title("Walkie Channels:")
     htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/TVBOY_logo.png"
     st.sidebar.image(htp)
+    st.sidebar.title("Walkie Channels:")
     choice = st.sidebar.selectbox("Who do you need?", list(PAGES.keys()))
     #call the page function
     PAGES[choice]()
