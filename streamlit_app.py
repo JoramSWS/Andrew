@@ -22,7 +22,7 @@ def page_1():
     st.header("Andrew")
     query_text = st.text_input("Go for Andrew.")
     if not query_text:
-        st.warning("I said "Go for Andrew!!")
+        st.warning("I said 'Go for Andrew!!'")
         return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
