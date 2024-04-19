@@ -17,10 +17,10 @@ def page_1():
     
     # Streamlit App
     htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/ANDREW.png"
-    st.image(htp)
+    st.image(htp, width=750)
     query_text = st.text_input("Go for Andrew.")
     if not query_text:
-        st.warning("I SAID GO.")
+        st.warning("I'm waiting numb nuts.")
         return
 
 
