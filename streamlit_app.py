@@ -50,7 +50,7 @@ def page_1():
 def page_2():
     PROMPT_TEMPLATE = """
     
-    Answer the question using portmanteaus or clever wordplay.  Be a man from Akron, Ohio: {question}
+    Answer the question using portmanteaus or clever wordplay.  Be a man who likes the Cleveland Browns.  Be a man who is very tired: {question}
 
     """
 
