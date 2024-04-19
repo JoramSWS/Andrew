@@ -7,48 +7,70 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
 def page_1():
-    st.title("Chris")
-"""
-My name is Chris. 
-I know many things, ask me anything you like, 
-but please. Don't ask me stupid questions❓
-"""
+    # Streamlit App
+    htp="https://raw.githubusercontent.com/JoramSWS/pw-tests/main/S1_CrewHero_Wordmark-2x.png"
+    st.image(htp, width=350)
+    st.title("TVBOY AI")
+    st.header("Chris")
+    query_text = st.text_input("What??")
+    if not query_text:
+        st.warning("Please enter your request.")
+        return
 
+    prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
+    prompt = prompt_template.format(context="I am an angry man", question=query_text)
+    print(prompt)
 
-if prompt := st.text_input("Go for Chris..."):
-    messages = [
-        {"role": "system", "content": "You are a sarcastic assistant called Cercei Lannister, you love to use emojis."},
-        {"role": "user", "content": prompt}
-    ]
+    model = ChatOpenAI(
+        model="gpt-3.5-turbo",
+        model_kwargs={"top_p": 0.3},
+        temperature=0.8
+    )
 
-    st.chat_message("user").write(prompt)
+    response_text = model.invoke(prompt)
 
-    response = openai.ChatCompletion.create(model="gpt-3.5-turbo-0613", messages=messages)
-    msg = response.choices[0].message
+    # Convert response_text to string
+    response_text = str(response_text)
 
-    st.chat_message("assistant").write(msg.content)
+    # Extract text between "content=" and "response_metadata="
+    start_index = response_text.find("content=") + len("content=")
+    end_index = response_text.find("response_metadata=")
+    formatted_response = response_text[start_index:end_index].replace("\\n\\n", "\n").strip()
+
+    st.write(formatted_response)
 
 def page_2():
-    st.title("Andrew")
-"""
-My name is Andres. 
-I know many things, ask me anything you like, 
-but please. Don't ask me stupid questions❓
-"""
+  # Streamlit App
+    htp="https://raw.githubusercontent.com/JoramSWS/pw-tests/main/S1_CrewHero_Wordmark-2x.png"
+    st.image(htp, width=350)
+    st.title("TVBOY AI")
+    st.header("Andrew")
+    query_text = st.text_input("Go for Andrew!")
+    if not query_text:
+        st.warning("Please enter your request.")
+        return
 
+    prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
+    prompt = prompt_template.format(context="I am an angry man", question=query_text)
+    print(prompt)
 
-if prompt := st.text_input("Go for Andrew..."):
-    messages = [
-        {"role": "system", "content": "You are very kind and complimentary"},
-        {"role": "user", "content": prompt}
-    ]
+    model = ChatOpenAI(
+        model="gpt-3.5-turbo",
+        model_kwargs={"top_p": 0.3},
+        temperature=0.8
+    )
 
-    st.chat_message("user").write(prompt)
+    response_text = model.invoke(prompt)
 
-    response = openai.ChatCompletion.create(model="gpt-3.5-turbo-0613", messages=messages)
-    msg = response.choices[0].message
+    # Convert response_text to string
+    response_text = str(response_text)
 
-    st.chat_message("assistant").write(msg.content)
+    # Extract text between "content=" and "response_metadata="
+    start_index = response_text.find("content=") + len("content=")
+    end_index = response_text.find("response_metadata=")
+    formatted_response = response_text[start_index:end_index].replace("\\n\\n", "\n").strip()
+
+    st.write(formatted_response)
 
 PAGES = {
     "Chris": page_1,
