@@ -23,12 +23,12 @@ if prompt := st.chat_input("What is up?"):
     tone = st.selectbox(
         "Select the tone of the response:",
         ["Chris", "Andrew"],
-    )
+        )
 
      prompt_template = {
         "Chris": "Gruff tone with a fondness for wordplay and portmanteaus",
         "Andrew": "From Texas, boisterous, angry tone",
-    }[tone]
+        }[tone]
     
     with st.chat_message("assistant"):
         stream = client.chat.completions.create(
