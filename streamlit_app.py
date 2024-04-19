@@ -1,31 +1,60 @@
 from openai import OpenAI
 import streamlit as st
 
-st.title("ChatGPT-like clone")
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-openai_model = "gpt-3.5-turbo"
+def page_1():
+    st.title("Chris")
+"""
+My name is Chris. 
+I know many things, ask me anything you like, 
+but please. Don't ask me stupid questions❓
+"""
 
-name = st.radio(
-    "Select a name:",
-    ["Chris", "Andrew"],
-)
+openai.api_key = openai_api_key
 
-personality_prompt = {
-    "Chris": "Gruff tone with a fondness for wordplay and portmanteaus,",
-    "Andrew": "From Texas, boisterous, angry tone,",
-}[name]
+if prompt := st.text_input("Ask me anything..."):
+    messages = [
+        {"role": "system", "content": "You are a sarcastic assistant called Cercei Lannister, you love to use emojis."},
+        {"role": "user", "content": prompt}
+    ]
 
-if prompt := st.text_input("What is up?"):
-    with st.container():
-        st.markdown("User:")
-        st.write(prompt)
+    st.chat_message("user").write(prompt)
 
-    with st.container():
-        st.markdown("Assistant:")
-        messages = [{"role": "user", "content": prompt}, {"role": "assistant", "content": personality_prompt}]
-        response = client.chat.completions.create(
-            model=openai_model,
-            messages=messages,
-        )
-        st.write(response["choices"][0]["message"]["content"].strip())
+    response = openai.ChatCompletion.create(model="gpt-3.5-turbo-0613", messages=messages)
+    msg = response.choices[0].message
+
+    st.chat_message("assistant").write(msg.content)
+
+def page_2():
+    st.title("Andrew")
+"""
+My name is Andres. 
+I know many things, ask me anything you like, 
+but please. Don't ask me stupid questions❓
+"""
+
+openai.api_key = openai_api_key
+
+if prompt := st.text_input("Ask me anything..."):
+    messages = [
+        {"role": "system", "content": "You are very kind and complimentary"},
+        {"role": "user", "content": prompt}
+    ]
+
+    st.chat_message("user").write(prompt)
+
+    response = openai.ChatCompletion.create(model="gpt-3.5-turbo-0613", messages=messages)
+    msg = response.choices[0].message
+
+    st.chat_message("assistant").write(msg.content)
+
+
+
+def main():
+    st.sidebar.title("navigation")
+    choice = st.sidebar.selectbox("select chatbot', list(PAGES.keys()))
+    #call the page function
+    PAGES[choice]()
+
+if__name__=="__main__":
+    main()
