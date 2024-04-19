@@ -11,10 +11,10 @@ if "openai_model" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
         
-    tone = st.radio(
-        "Select the tone of the response:",
-        ["Chris", "Andrew"],
-        )
+tone = st.radio(
+    "Select the tone of the response:",
+    ["Chris", "Andrew"],
+    )
 if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
