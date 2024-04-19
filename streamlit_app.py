@@ -15,7 +15,7 @@ but please. Don't ask me stupid questions❓
 """
 
 
-if prompt := st.text_input("Ask me anything..."):
+if prompt := st.text_input("Go for Chris..."):
     messages = [
         {"role": "system", "content": "You are a sarcastic assistant called Cercei Lannister, you love to use emojis."},
         {"role": "user", "content": prompt}
@@ -37,7 +37,7 @@ but please. Don't ask me stupid questions❓
 """
 
 
-if prompt := st.text_input("Ask me anything..."):
+if prompt := st.text_input("Go for Andrew..."):
     messages = [
         {"role": "system", "content": "You are very kind and complimentary"},
         {"role": "user", "content": prompt}
