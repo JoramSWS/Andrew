@@ -36,7 +36,6 @@ I know many things, ask me anything you like,
 but please. Don't ask me stupid questions❓
 """
 
-openai.api_key = openai_api_key
 
 if prompt := st.text_input("Ask me anything..."):
     messages = [
