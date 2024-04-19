@@ -27,16 +27,14 @@ if prompt := st.chat_input("What is up?"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        # Append the personality prompt to the existing messages
         messages = [
             {"role": m["role"], "content": m["content"]}
             for m in st.session_state.messages
         ]
         messages.append({"role": "assistant", "content": personality_prompt})
-        stream = client.chat.completions.create(
+        response = client.chat.completions.create(
             model=st.session_state["openai_model"],
             messages=messages,
-            stream=True,
         )
-        response = st.write_stream(stream)
+        st.write(response.choices[0].text.strip())
     st.session_state.messages.append({"role": "assistant", "content": response})
