@@ -17,7 +17,7 @@ def page_1():
     
     # Streamlit App
     htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/ANDREW.png"
-    st.image(htp, width=750)
+    st.image(htp, width=2000)
     query_text = st.text_input("Go for Andrew.")
     if not query_text:
         st.warning("I'm waiting numb nuts.")
