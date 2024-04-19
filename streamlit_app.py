@@ -19,7 +19,17 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
+        
+    tone = st.selectbox(
+        "Select the tone of the response:",
+        ["Chris", "Andrew"],
+    )
 
+     prompt_template = {
+        "Chris": "Gruff tone with a fondness for wordplay and portmanteaus",
+        "Andrew": "From Texas, boisterous, angry tone",
+    }[tone]
+    
     with st.chat_message("assistant"):
         stream = client.chat.completions.create(
             model=st.session_state["openai_model"],
