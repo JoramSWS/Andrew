@@ -12,7 +12,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
         
 name = st.radio(
-    "Select the tone of the response:",
+    "Select a name:",
     ["Chris", "Andrew"],
     )
 
