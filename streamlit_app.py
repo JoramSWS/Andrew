@@ -19,7 +19,8 @@ def page_1():
     htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/ANDREW.png"
     st.image(htp)
     query_text = st.text_input("Go for Andrew.")
-    st.warning("I SAID GO.")
+    if not query_text:
+        st.warning("I SAID GO.")
         return
 
 
