@@ -18,7 +18,12 @@ def page_1():
     # Streamlit App
     htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/ANDREW.png"
     st.image(htp)
-    query_text = st.text_input("Go for Andrew. I SAID GO")
+    query_text = st.text_input("Go for Andrew.")
+    st.warning("I SAID GO.")
+        return
+
+
+    
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(question=query_text)
