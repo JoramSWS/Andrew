@@ -16,7 +16,7 @@ def page_1():
 
     
     # Streamlit App
-    htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/ANDREW.png"
+    htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/CHRIS.png"
     st.image(htp)
     query_text = st.text_input("Go for Andrew.")
     if not query_text:
