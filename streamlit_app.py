@@ -32,7 +32,7 @@ def page_1():
 
     model = ChatOpenAI(
         model="gpt-3.5-turbo",
-        model_kwargs={"top_p": 0.3},
+        model_kwargs={"top_p": 0.7},
         temperature=0.8
     )
 
