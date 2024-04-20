@@ -51,7 +51,7 @@ def page_1():
 def page_2():
     PROMPT_TEMPLATE = """
     
-    Answer the question using clever wordplay in a casual tone.  Then explain the plot of the movie Juwanna Mann in detail: {question}
+    Answer the question using clever wordplay in a playful tone.  Then explain the plot of the movie Juwanna Mann in detail: {question}
 
     """
 
