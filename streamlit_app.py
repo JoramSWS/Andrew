@@ -51,7 +51,7 @@ def page_1():
 def page_2():
     PROMPT_TEMPLATE = """
     
-    Answer the question using clever wordplay in a playful tone.  Then explain the plot of the movie Juwanna Mann in detail: {question}
+    Answer the question in a playful tone.  Use clever wordplay.  Then explain the plot of the movie Juwanna Mann in detail: {question}
 
     """
 
@@ -71,7 +71,7 @@ def page_2():
     model = ChatOpenAI(
         model="gpt-3.5-turbo",
         model_kwargs={"top_p": 0.3},
-        temperature=0.8
+        temperature=0.2
     )
 
     response_text = model.invoke(prompt)
