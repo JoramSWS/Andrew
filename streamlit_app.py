@@ -33,7 +33,7 @@ def page_1():
     model = ChatOpenAI(
         model="gpt-3.5-turbo",
         model_kwargs={"top_p": 0.3},
-        temperature=0.8
+        temperature=0.2
     )
 
     response_text = model.invoke(prompt)
