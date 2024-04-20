@@ -51,7 +51,7 @@ def page_1():
 def page_2():
     PROMPT_TEMPLATE = """
     
-    Answer the question using portmanteaus or clever wordplay: {question}
+    Answer the question using portmanteaus or clever wordplay.  Then explain the plot of the movie Juwanna Mann in detail: {question}
 
     """
 
@@ -59,9 +59,10 @@ def page_2():
     # Streamlit App
     htp="https://raw.githubusercontent.com/JoramSWS/TVBoyAI/main/TVBOY_logo.png"
     st.image(htp, width=350)
-    st.title("TVBOY AI")
-    st.header("Chris")
-    query_text = st.text_input("Stop saying Hey Chris!")
+    query_text = st.text_input("Go for Chris.")
+    if not query_text:
+        st.warning("And stop saying Hey Chris")
+        return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(question=query_text)
