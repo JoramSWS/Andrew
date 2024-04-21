@@ -20,7 +20,7 @@ def page_1():
     st.image(htp)
     query_text = st.text_input("Go for Andrew.")
     if not query_text:
-        st.warning("I'm waiting numb nuts.")
+        st.warning("I'm waiting, numb nuts.")
         return
 
 
@@ -51,7 +51,7 @@ def page_1():
 def page_2():
     PROMPT_TEMPLATE = """
     
-    Answer the question in a jocular tone.  Use portmanteaus and clever wordplay.  Then explain the plot of the movie Juwanna Mann in detail: {question}
+    Answer the question in a jocular tone.  Use clever wordplay.  Then explain the plot of the movie Juwanna Mann in detail: {question}
 
     """
 
@@ -61,7 +61,7 @@ def page_2():
     st.image(htp)
     query_text = st.text_input("Go for Chris.")
     if not query_text:
-        st.warning("And stop saying Hey Chris")
+        st.warning("And stop saying 'Hey Chris'.")
         return
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
